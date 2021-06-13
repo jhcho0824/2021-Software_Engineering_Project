@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Personal Information Settings</title>
+</head>
+
+<body>
+<style>
+        a{
+	        text-decoration:none;
+         }
+        p{line-height: 30px;}
+        body{background-color: #FFCD12;}
+        div{
+            background-color: white;
+            width: 90%;
+            padding: 15px;
+            border: 1px solid black;
+        }
+</style>
+<form action="/user_info_edit_proc" method="post">
+    <input type="hidden" name="rowid" value="{{ edit_rowid }}">
+		<table border="0" bgcolor="#FFCD12" align="center">
+    	<hr>
+    	<tr>
+      		<td><font size=10><b>Personal Information Settings</b></font></td>
+    	</tr>
+    </table>
+    <hr><br><br>
+    
+    <table border="0" align="center">
+    <tr>
+        
+        <td colspan="2"><b>User ID &emsp;&emsp;</b></td>
+        <td>{{ session.get('userId') }}</td>
+    </tr>
+    <tr>
+        
+        <td colspan="2"><b>User Password &emsp;&emsp;</b></td>
+        <td><input type"password" name="userPwd"></td>
+    </tr>
+    <tr>
+        
+        <td colspan="2"><b>User Email &emsp;&emsp;</b></td>
+        <td><input type="text" value="{{ edit_email }}" name="userEmail"></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>    
+        <td><input type="submit" value="Modify" style=background-color:orange>&emsp;</td>
+        <td><a href="/main"><input type="button" value="Cancel" style=background-color:orange></a></td>
+        
+    </tr>
+    </table>
+    <br>
+    
+    
+
+</form>
+</body>
+</html>

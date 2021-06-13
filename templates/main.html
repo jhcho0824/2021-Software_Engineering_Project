@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Diary</title>
+</head>
+
+<body>
+    <style>
+        a{
+	        text-decoration:none;
+        }
+        p{line-height: 30px;}
+        body{background-color: #FFCD12;}
+        
+        main_pic {   
+            float:left;
+            height:300px;
+            width:590px; 
+            padding: 15px;
+            border:3px dashed pink;
+            box-sizing:border-box;
+            margin-top: 50px;
+            margin-right: 600px;
+            margin-left: 600px;
+            margin-bottom: 10px;
+            background-color: blanchedalmond;
+            border-bottom-left-radius: 800px;
+            border-top-left-radius: 800px;
+            border-bottom-right-radius: 800px;
+            border-top-right-radius: 800px;
+            overflow: hidden;
+        }
+
+        .pic {
+            border-bottom-left-radius: 100px;
+            border-top-left-radius: 100px;
+            border-bottom-right-radius: 100px;
+            border-top-right-radius: 100px;
+            margin-top: 50px;
+            margin-right: 600px;
+            margin-left: 600px;
+            margin-bottom: 10px;
+            height: 350px;
+            width: 600px
+        }
+    </style>
+    
+    
+    {% if session.get('logFlag') %}
+        <hr>
+        <table border="0" align="center">
+            <tr>
+                <td></td>
+                <td></td>
+                
+                <td colspan="3"><a href="/main"><font size=10><b>Your Diary</b></font></a></td>
+                
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                
+                <td colspan="3"><h2 align="center">Welcome {{ session['userId'] }}!</h2></td>
+                
+                <td></td>
+                <td></td>  
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                
+                <td><a href="/user_info_edit/{{ session['rowid'] }}"><input type="button" value="My Page" style=background-color:orange></a></td>
+                <td><a href="/post_page"><input type="button" value="Write Post" style=background-color:orange></a></td>
+                <td><a href="/post_list"><input type="button" value="My Post" style=background-color:orange></a></td>
+                <td><a href="/logout"><input type="button" value="Log Out" style=background-color:orange></a></td>
+                
+                
+                <td></td>
+                
+            </tr>
+        </table>
+    <hr>
+    <br><br>
+             
+    {% else %}
+        <hr>
+        <table border="0" align="center">
+            <tr>
+                <td></td>
+                <td></td>
+                
+                <td colspan="3"><a href="/main"><font size=10><b>Your Diary</b></font></a></td>
+                
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                
+                <td colspan="3"><h2 align="center">Welcome!</h2></td>
+                
+                <td></td>
+                <td></td>  
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><a href="/login_page"><input type="button" value="Sign Up" style=background-color:orange></a></td>               
+                <td><a href="/register_page"><input type="button" value="Register" style=background-color:orange></a></td>
+                  
+            </tr>
+        </table>
+        <hr>
+    {% endif %}
+    
+    
+    <img class="pic" src= '{{ url_for('static', filename = './image/diary.jpg') }}'>
+    
+    
+
+    
+</body>
+</html>

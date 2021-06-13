@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>My Post List</title>
+    
+</head>
+
+<body>
+<style>
+    a{
+	    text-decoration:none;
+    }
+    p{line-height: 30px;}
+    body{background-color: #FFCD12;}
+    article {   
+            height:250px;
+            width:590px; 
+            padding: 15px;
+            border:3px dashed pink;
+            box-sizing:border-box;
+            margin-right: 600px;
+            margin-left: 600px;
+            margin-bottom: 10px;
+            background-color: blanchedalmond;
+            border-bottom-left-radius: 20px;
+            border-top-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            border-top-right-radius: 20px;
+            overflow: hidden;
+            clear: both;
+        }
+    .div2 {
+          width:150px;
+          height:100px;
+          float:right;
+          clear: both;
+        }
+</style>
+
+<form action="/post_list" method='POST'>
+    <input type="hidden" name="rowid" value="{{ edit_rowid }}">
+    <table border="0" bgcolor="#FFCD12" align="center">
+    <hr>
+    <tr>
+        <td></td>
+        <td><font size=10><b>My Post</b></font></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    </table>
+    <hr><br><br>
+    
+    {% for i in row %}
+        <article>
+            <img class="div2" src={{ url_for('static', filename = i[3]) }}>
+            <h1><a href="/post_read/{{ i[2] }}">{{ i[0] }}</a></h1>
+            <h4>{{ i[1] }}</h3>  
+        </article>  
+        
+    {% endfor %}
+
+<table border="0" align='center'>
+    <tr>
+        <td><a href="/post_page"><input type="button" value="Write" style=background-color:orange></a></td>
+        <td>&emsp;</td>
+        <td><a href="/main"><input type="button" value="Cancel" style=background-color:orange></a></td>
+    </tr>
+</table>
+</form>
+</body>

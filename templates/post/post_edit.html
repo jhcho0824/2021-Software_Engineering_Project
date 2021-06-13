@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Your Diary</title>
+  </head>
+
+  <body>
+    <style>
+        a{
+	        text-decoration:none;
+         }
+        p{line-height: 30px;}
+        body{background-color: #FFCD12;}
+        div{
+            background-color: white;
+            width: 90%;
+            padding: 15px;
+            border: 1px solid black;
+        }
+    </style>
+    <form action="/post_edit_proc" enctype="multipart/form-data" method="POST">
+    <input type="hidden" name="rowid" value="{{ edit_rowid }}">
+    <table border="0" bgcolor="#FFCD12" align="center">
+    <hr>
+    <tr>
+    
+      <td><font size=10><b>Edit Post</b></font></td>
+    </tr>
+    
+    </table>
+    <hr>
+    <br>
+    
+      <table border="0" bgcolor="#FFCD12" align="center">
+      <tr>
+        <td colspan="5">
+          <label for="title">Write Title<br></label>
+        </td>
+      <tr>
+        <td colspan="5">
+          <textarea type="text" name="title" cols="80" rows="2" placeholder='Write Title...' style="overflow-y:scroll; overflow-x:hidden; resize: none;" required>{{ edit_title }}</textarea>
+        <br><br>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="4">
+          <label for="title">Write Contents<br></label>
+        </td>
+        <td><input type = "file" name = "file" accept="image/*" /></td>
+      </tr>
+      <tr>
+        <td colspan="5">
+          <textarea type="text" name="content" cols="80" rows="15" placeholder='Write Contents...' style="overflow-y:scroll; overflow-x:hidden; resize: none;" required>{{ edit_data }}</textarea><br>
+        </td>
+      </tr>
+      </table>
+      <table border="0" bgcolor="#FFCD12" align="center">
+      <tr>
+        <td>
+			    <input type="submit" value="Submit" style=background-color:orange>
+        </td>
+        <td></td>
+        <td>
+        </td>
+        <td></td>
+        <td>
+          
+        </td>
+        <td></td>
+        <td>
+          <a href="/post_read/{{ edit_rowid }}"><input type="button" value="Cancel" style=background-color:orange></a>
+        </td>
+      </tr>
+      </table>
+		
+    </form>
+  </body>
+</html>

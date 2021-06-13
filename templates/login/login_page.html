@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+</head>
+
+<body>
+<style>
+    a{
+	    text-decoration:none;
+    }
+    p{line-height: 30px;}
+    body{background-color: #FFCD12;}
+</style>
+
+<form action="/login_proc" method="post">
+    <table border="0" bgcolor="#FFCD12" align="center">
+    	<hr>
+    	<tr>
+      		<td colspan="3"><font size=10><b>Sign Up</b></font></td>
+    	</tr>
+    </table>
+    <hr><br><br>
+    <table border="0" align="center">
+        <tr>
+            <td colspan="2"><b>User ID &emsp;&emsp;</b></td>
+            <td colspan="2"><input type="text" name="id"></td>
+        </tr>
+        <tr>
+            <td colspan="2"><b>User Password &emsp;&emsp;</b></td>
+            <td colspan="2"><input type="password" name="pwd"></td>
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+            
+            <td colspan="2"></td>
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+            <td><input type="submit" value="Log In" style=background-color:orange></td>
+            <td><a href="/main"><input type="button" value="Cancel" style=background-color:orange></a></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

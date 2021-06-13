@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+	<head>
+    <title>Register</title>
+  	</head>
+	<body>
+	<style>
+    	a{
+	    	text-decoration:none;
+    	}
+    	p{line-height: 30px;}
+    	body{background-color: #FFCD12;}
+	</style>
+		<table border="0" bgcolor="#FFCD12" align="center">
+    	<hr>
+    	<tr>
+      		<td><font size=10><b>Register</b></font></td>
+    	</tr>
+    </table>
+    <hr><br><br>
+
+		<form action="/register_proc" method="POST">
+			<table border="0" align="center">
+    			<tr>
+        			<td colspan="2"><input type="username" name="userName" placeholder="Username"><br></td>
+        			<td><b><br></b></td>
+   				 </tr>
+				 <tr>
+        			<td colspan="2"><input type="id" name="userId" placeholder="UserID"><br></td>
+        			<td><b>&emsp;※ Your ID must be at least 8 characters long!</b><br></td>
+   				 </tr>
+				 <tr>
+        			<td colspan="2"><input type="password" name="userPwd" placeholder="Password"><br></td>
+        			<td><b>&emsp;※ Your Password must be at least 8 characters long!</b><br></td>
+   				 </tr>
+				 <tr>
+        			<td colspan="2"><input type="password" name="passwordcheck" placeholder="Passwordcheck"><br></td>
+        			<td><b>&emsp;※ Check your password!</b><br></td>
+   				 </tr>
+				 <tr>
+        			<td colspan="2"><input type="email" name="userEmail" placeholder="email@naver.com"><br><br></td>
+        			<td><b>&emsp;※ There must be '@' in your email!</b><br><br></td>
+   				 </tr>
+				 <tr>
+				 	<td><input type="submit" value="Register" style=background-color:orange></td>
+					<td><a href="/main"><input type="button" value="Cancel" style=background-color:orange></a></td>
+					<td></td>
+				 </tr>
+    		</table>
+		</form>
+		</body>
+</html>

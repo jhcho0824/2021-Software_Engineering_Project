@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Upload Page</title>
+  </head>
+
+  <body>
+    <style>
+        a{
+	        text-decoration:none;
+         }
+        p{line-height: 30px;}
+        body{background-color: #FFCD12;}
+
+        div1 {   
+            float:left;
+            height:70px;
+            width:590px; 
+            padding: 15px;
+            border:3px dashed pink;
+            box-sizing:border-box;
+            margin-top: 0px;
+            margin-right: 600px;
+            margin-left: 600px;
+            margin-bottom: 10px;
+            background-color: blanchedalmond;
+            border-bottom-left-radius: 20px;
+            border-top-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            border-top-right-radius: 20px;
+            overflow: auto;
+        }
+
+        article {   
+            float:left;
+            height:550px;
+            width:590px; 
+            padding: 15px;
+            border:3px dashed pink;
+            box-sizing:border-box;
+            margin-top: 15px;
+            margin-right: 600px;
+            margin-left: 600px;
+            margin-bottom: 10px;
+            background-color: blanchedalmond;
+            border-bottom-left-radius: 20px;
+            border-top-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            border-top-right-radius: 20px;
+            overflow: auto;
+
+        }
+    </style>
+
+    <table border="0" bgcolor="#FFCD12" align="center">
+    <hr>
+    <tr>
+      <td><font size=10><b>Upload Page</b></font></td>
+    </tr>
+    </table>
+    <hr><br><br>
+    <table border="0" bgcolor="#FFCD12" align="center">
+    <tr>
+      <td><font size=6><b>Upload Your Memory!</b></font></td>
+    </tr>
+    </table>
+    <br><br>
+
+    <center>
+    <form action = "http://localhost:5000/post_upload_proc" method = "POST"
+         enctype = "multipart/form-data">
+    <div1>
+    <input type = "file" name = "file" accept="image/*" />
+    <input type = "submit" value="Submit"/>
+    </div1>
+    </form></center>
+    
+  </body>
+</html>
